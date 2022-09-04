@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>vite.config.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #597cc2;}
+.s1 { color: #aeb5bd;}
+.s2 { color: #807d6e; font-weight: bold;}
+.s3 { color: #5c7ab8;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+vite.config.js</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">{ defineConfig } from </span><span class="s2">'vite'</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">laravel from </span><span class="s2">'laravel-vite-plugin'</span><span class="s0">;</span>
+
+<span class="s0">export default </span><span class="s1">defineConfig({</span>
+    <span class="s1">plugins: [</span>
+        <span class="s1">laravel({</span>
+            <span class="s1">input: [</span><span class="s2">'resources/css/app.css'</span><span class="s3">, </span><span class="s2">'resources/js/app.js'</span><span class="s1">]</span><span class="s3">,</span>
+            <span class="s1">refresh: </span><span class="s0">true</span><span class="s3">,</span>
+        <span class="s1">})</span><span class="s3">,</span>
+    <span class="s1">]</span><span class="s3">,</span>
+<span class="s1">})</span><span class="s0">;</span>
+</pre>
+</body>
+</html>

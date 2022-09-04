@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>artisan</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #aeb5bd;}
+.s1 { color: #597cc2;}
+.s2 { color: #aeb5bd;}
+.s3 { color: #a9b7c6;}
+.s4 { color: #807d6e; font-weight: bold;}
+.s5 { color: #5c7ab8;}
+.s6 { color: #7a7a7a;}
+.s7 { color: #9876aa;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+artisan</font>
+</center></td></tr></table>
+<pre><span class="s0">#!/usr/bin/env php</span>
+<span class="s1">&lt;?php</span>
+
+<span class="s3">define</span><span class="s2">(</span><span class="s4">'LARAVEL_START'</span><span class="s5">, </span><span class="s3">microtime</span><span class="s2">(</span><span class="s3">true</span><span class="s2">))</span><span class="s1">;</span>
+
+<span class="s6">/* 
+|-------------------------------------------------------------------------- 
+| Register The Auto Loader 
+|-------------------------------------------------------------------------- 
+| 
+| Composer provides a convenient, automatically generated class loader 
+| for our application. We just need to utilize it! We'll require it 
+| into the script here so that we do not have to worry about the 
+| loading of any of our classes manually. It's great to relax. 
+| 
+*/</span>
+
+<span class="s1">require </span><span class="s3">__DIR__</span><span class="s2">.</span><span class="s4">'/vendor/autoload.php'</span><span class="s1">;</span>
+
+<span class="s7">$app </span><span class="s2">= </span><span class="s1">require_once </span><span class="s3">__DIR__</span><span class="s2">.</span><span class="s4">'/bootstrap/app.php'</span><span class="s1">;</span>
+
+<span class="s6">/* 
+|-------------------------------------------------------------------------- 
+| Run The Artisan Application 
+|-------------------------------------------------------------------------- 
+| 
+| When we run the console application, the current CLI command will be 
+| executed in this console and the response sent back to a terminal 
+| or another output device for the developers. Here goes nothing! 
+| 
+*/</span>
+
+<span class="s7">$kernel </span><span class="s2">= </span><span class="s7">$app</span><span class="s2">-&gt;</span><span class="s3">make</span><span class="s2">(</span><span class="s3">Illuminate</span><span class="s2">\</span><span class="s3">Contracts</span><span class="s2">\</span><span class="s3">Console</span><span class="s2">\</span><span class="s3">Kernel</span><span class="s2">::</span><span class="s1">class</span><span class="s2">)</span><span class="s1">;</span>
+
+<span class="s7">$status </span><span class="s2">= </span><span class="s7">$kernel</span><span class="s2">-&gt;</span><span class="s3">handle</span><span class="s2">(</span>
+    <span class="s7">$input </span><span class="s2">= </span><span class="s1">new </span><span class="s3">Symfony</span><span class="s2">\</span><span class="s3">Component</span><span class="s2">\</span><span class="s3">Console</span><span class="s2">\</span><span class="s3">Input</span><span class="s2">\</span><span class="s3">ArgvInput</span><span class="s5">,</span>
+    <span class="s1">new </span><span class="s3">Symfony</span><span class="s2">\</span><span class="s3">Component</span><span class="s2">\</span><span class="s3">Console</span><span class="s2">\</span><span class="s3">Output</span><span class="s2">\</span><span class="s3">ConsoleOutput</span>
+<span class="s2">)</span><span class="s1">;</span>
+
+<span class="s6">/* 
+|-------------------------------------------------------------------------- 
+| Shutdown The Application 
+|-------------------------------------------------------------------------- 
+| 
+| Once Artisan has finished running, we will fire off the shutdown events 
+| so that any final work may be done by the application before we shut 
+| down the process. This is the last thing to happen to the request. 
+| 
+*/</span>
+
+<span class="s7">$kernel</span><span class="s2">-&gt;</span><span class="s3">terminate</span><span class="s2">(</span><span class="s7">$input</span><span class="s5">, </span><span class="s7">$status</span><span class="s2">)</span><span class="s1">;</span>
+
+<span class="s1">exit</span><span class="s2">(</span><span class="s7">$status</span><span class="s2">)</span><span class="s1">;</span>
+</pre>
+</body>
+</html>
