@@ -30,12 +30,13 @@ class UserControlller extends Controller
      */
     public function updateRole(Request $request, User $user)
     {
-        if (auth()->user()->isAdmin()) {
+        if (auth()->user()->isAdmin() && $user->id != auth()->user()->id) {
             $user->update([
                 'role' => $request->role
             ]);
             return redirect()->route('user.index')->with('success', 'User role updated successfully');
         }
+        return redirect()->route('user.index')->with('error', 'User role not updated');
 
     }
 }

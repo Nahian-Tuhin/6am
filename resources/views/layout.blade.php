@@ -42,11 +42,20 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('product.create')}}">Create Product</a>
                                         </li>
+                                        @auth
+
                                         @if(auth()->user()->isAdmin())
                                             <li class="nav-item">
                                                 <a class="nav-link" href="{{route('user.index')}}">Manage User</a>
                                             </li>
                                         @endif
+                                        @endauth
+
+                                        @auth
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{route('logout')}}">Logout</a>
+                                            </li>
+                                        @endauth
                                     </ul>
                                 </div>
                             </div>

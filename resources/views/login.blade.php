@@ -23,12 +23,12 @@
                 @csrf
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address or Username or Phone Number</label>
-                  <input type="text" name="data" class="form-control" id="exampleInputEmail1" value="{{ old('data') }}"  placeholder="Enter email or username or phone" >
+                  <input type="text" name="data" class="form-control" id="exampleInputEmail1" value="{{ old('data') ?? 'admin' }}"  placeholder="Enter email or username or phone" >
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label for="exampleInputPassword1">Password </label>
+                  <input type="password" name="password" class="form-control" id="exampleInputPassword1 "  placeholder="admin">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>

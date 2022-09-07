@@ -8,15 +8,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    @if(session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Success!</strong> {{ session('success') }}
+                    </div>
+                    @endif
+                @if(session('error'))
+                <div class="alert alert-danger">
+                    <strong>Error!</strong> {{ session('error') }}
+                </div>
+                @endif
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title m-0 float-left">User List</h3>
 
                         </div>
                         <div class="card-body">
-                            @if(Session::has('status'))
-                                <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('status') }}</p>
-                            @endif
+
                             <table class="table table-bordered">
                                 <thead>
                                 <tr>
