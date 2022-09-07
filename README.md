@@ -11,4 +11,4 @@ Command: `php artisan command:add_products`
 user: admin
 
 
-password: admiin
+password: admin
